@@ -9,8 +9,14 @@ class Battle {
       this.description = battleJSON.description
     }
 
-    renderLi() {
-    return `<li>${this.name}</li>`  
+    renderUl() {
+    return `<ul><h4>${this.name}</h4>
+                <li>Year Ended: ${this.year}</li>
+                <li>Country of occurence: ${this.country} </li>
+                <li>Napoleon's Troop Strength: ${this.troops}</li>
+                <li>Napoleon's Total Casualties: ${this.casualties}</li>
+                <li>Battle Description: ${this.description} </li>
+            </ul><br>`  
     }
 
 }

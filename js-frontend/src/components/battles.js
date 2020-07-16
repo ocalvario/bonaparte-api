@@ -14,7 +14,7 @@ class Battles {
 
     createBattle(e) {
         e.preventDefault()
-        console.log('battle is being created')
+        console.log(this.battleForm.value)
     }
 
     fetchAndLoadBattles() {
@@ -29,7 +29,7 @@ class Battles {
     }
 
     render() {
-        this.battlesContainer.innerHTML = this.battles.map(battle => battle.renderLi()).join('')
+        this.battlesContainer.innerHTML = this.battles.map(battle => battle.renderUl()).join('')
     }
 }
 
