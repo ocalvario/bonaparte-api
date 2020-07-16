@@ -10,7 +10,7 @@ class Battles {
        this.adapter.
        getBattles()
        .then(battles => {
-        battles.forEach(battle => this.battles.push(battle))
+        battles.forEach(battle => this.battles.push(new Battle(battle)))
        }) 
        .then(() => {
         this.render()
@@ -19,7 +19,7 @@ class Battles {
 
     render() {
         const battlesContainer = document.getElementById('battles-container')
-        battlesContainer.innerHTML = 'my notes here'
+        battlesContainer.innerHTML = this.battles.map(battle => `<li>${battle.name}</li>`).join('')
     }
 }
 
