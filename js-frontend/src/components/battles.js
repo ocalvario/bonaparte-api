@@ -2,8 +2,12 @@ class Battles {
     constructor() {
         this.battles = []
         this.adapter = new BattlesAdapter()
-        //this.bindEventListeners()
+        this.initiBindingsAndEventListeners()
         this.fetchAndLoadBattles()
+    }
+
+    initiBindingsAndEventListeners() {
+        this.battlesContainer = document.getElementById('battles-container')
     }
 
     fetchAndLoadBattles() {
@@ -18,8 +22,7 @@ class Battles {
     }
 
     render() {
-        const battlesContainer = document.getElementById('battles-container')
-        battlesContainer.innerHTML = this.battles.map(battle => `<li>${battle.name}</li>`).join('')
+        this.battlesContainer.innerHTML = this.battles.map(battle => `<li>${battle.name}</li>`).join('')
     }
 }
 
