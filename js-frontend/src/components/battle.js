@@ -8,4 +8,9 @@ class Battle {
       this.casualties = battleJSON.casualties
       this.description = battleJSON.description
     }
+
+    renderLi() {
+    return `<li>${this.name}</li>`  
+    }
+
 }

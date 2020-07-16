@@ -8,6 +8,13 @@ class Battles {
 
     initiBindingsAndEventListeners() {
         this.battlesContainer = document.getElementById('battles-container')
+        this.battleForm = document.getElementById('new-battle-form')
+        this.battleForm.addEventListener('submit', this.createBattle)
+    }
+
+    createBattle(e) {
+        e.preventDefault()
+        console.log('battle is being created')
     }
 
     fetchAndLoadBattles() {
@@ -22,7 +29,7 @@ class Battles {
     }
 
     render() {
-        this.battlesContainer.innerHTML = this.battles.map(battle => `<li>${battle.name}</li>`).join('')
+        this.battlesContainer.innerHTML = this.battles.map(battle => battle.renderLi()).join('')
     }
 }
 
