@@ -1,4 +1,4 @@
-class API::V1::BattleController < ApplicationController
+class Api::V1::BattlesController < ApplicationController
     def index
         @battles = Battle.all
 
