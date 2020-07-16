@@ -4,19 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- link styles sheet -->
 <title>Bonaparte App</title>
+
 </head>
 
 <body>
     <div class="container">
         <h1>Bonaparte App</h1>
-        <form id="new-battle-form">
-            <input type="text" />
-            <input type="submit" />
-        </form>
-        <div id="battle-container">
+        <div id="new-battle-container">
+            <form id="new-battle-form">
+                <input type="text" />
+                <input type="submit" />
+            </form>
+        </div>
 
+        <div id="battles-container">
+            
         </div>
     </div>
+    <script src="src/components/battles.js"></script>
+    <script src="src/components/app.js"></script>
+    <script src="src/adapters/BattlesAdapter.js"></script>
+    <script src="src/index.js"></script>
+
+
+
+
+
 </body>
 </html>

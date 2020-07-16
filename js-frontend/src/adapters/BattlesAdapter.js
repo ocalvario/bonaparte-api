@@ -4,7 +4,7 @@ class BattlesAdapter {
   }
   
   getBattles() {
-     return fetch(this.baseUrl).then(res =>json()
+     return fetch(this.baseUrl).then(res => res.json()
     )
   }
 
