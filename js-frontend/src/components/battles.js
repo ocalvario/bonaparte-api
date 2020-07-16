@@ -7,10 +7,19 @@ class Battles {
     }
 
     fetchAndLoadBattles() {
-       this.adapter.getBattles().then(battles => {
-        console.log(battles)
+       this.adapter.
+       getBattles()
+       .then(battles => {
+        battles.forEach(battle => this.battles.push(battle))
        }) 
+       .then(() => {
+        this.render()
+       })
     }
 
+    render() {
+        const battlesContainer = document.getElementById('battles-container')
+        battlesContainer.innerHTML = 'my notes here'
+    }
 }
 
