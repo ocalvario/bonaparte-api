@@ -4,8 +4,22 @@ class BattlesAdapter {
   }
   
   getBattles() {
-     return fetch(this.baseUrl).then(res => res.json()
-    )
+     return fetch(this.baseUrl).then(res => res.json())
   }
 
+
+    createBattle(battle) {
+      const battle = {
+        name: nameValue
+        // year: yearValue
+        // country: countryValue
+        // troops: troopsValue
+        // casualties: casualtiesValue
+        // description: descriptionValue
+      }
+      return fetch(this.baseUrl, {
+        method: 'POST', 
+        body: JSON.stringify({ battle })
+      })
+    }
 }
