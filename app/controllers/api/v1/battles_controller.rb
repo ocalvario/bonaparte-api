@@ -1,36 +1,35 @@
 class Api::V1::BattlesController < ApplicationController
     def index
-        @battles = Battle.all
-
-        render json: @battles, status: 200
+        battles = Battle.all
+        render json: battles, status: 200
     end
 
     def show
-        @battle = Battle.find(params[:id])
-        render json: @battle, status: 200
+        battle = Battle.find(params[:id])
+        render json: battle, status: 200
     end
     
     def create
-        @battle = Battle.create(battle_params)
+        battle = Battle.create(battle_params)
 
-        render json: @battle, status:200
+        render json: battle, status:200
     end
 
     def update
-        @battle = Battle.find(params[:id])
-        @battle.update(battle_params)
+        battle = Battle.find(params[:id])
+        battle.update(battle_params)
         render json: @battle, status:200
     end
 
     def destroy
-        @battle = Battle.find(params[:id])
+        battle = Battle.find(params[:id])
         battle.delete
         render json: {battleID: @battle.id}
     end
 
     private
         def battle_params
-            params.require(:battle).permit(:year)
+            params.require(:battle).permit(:name, :year, :country, :troops, :casualties, :description)
         end
 
 end

@@ -7,19 +7,23 @@ class BattlesAdapter {
      return fetch(this.baseUrl).then(res => res.json())
   }
 
-
-    createBattle(battle) {
-      const battle = {
-        name: nameValue
-        // year: yearValue
-        // country: countryValue
-        // troops: troopsValue
-        // casualties: casualtiesValue
-        // description: descriptionValue
-      }
-      return fetch(this.baseUrl, {
-        method: 'POST', 
-        body: JSON.stringify({ battle })
-      })
+  createBattle(nameValue, yearValue, countryValue, troopsValue, casualtiesValue, descriptionValue) {
+    const battle = {
+      name: nameValue,
+      year: yearValue,
+      country: countryValue,
+      troops: troopsValue,
+      casualties: casualtiesValue,
+      description: descriptionValue
     }
+    
+    return fetch(this.baseUrl, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ battle }),
+    }).then(res => res.json())
+  }
 }
+ 

@@ -16,26 +16,28 @@ class Battles {
         this.newBattleDescription = document.getElementById('new-battle-description')
         this.battleForm = document.getElementById('new-battle-form')
         this.battleForm.addEventListener('submit', this.createBattle.bind(this))
-        this.battleForm
+        // this.battleForm
     }
 
     createBattle(e) {
+        console.log(this)
         e.preventDefault()
         const nameValue = this.newBattleName.value
-        // const yearValue = this.newBattleYear.value
-        // const countryValue =  this.newBattleCountry.value
-        // const troopsValue = this.newBattleTroops.value
-        // const casualtiesValue = this.newBattleTroops.value
-        // const descriptionValue = this.newBattleDescription.value
-
-        this.adapter.crateBattle(params)
+        const yearValue = this.newBattleYear.value
+        const countryValue = this.newBattleCountry.value
+        const troopsValue = this.newBattleTroops.value
+        const casualtiesValue = this.newBattleCasualties.value
+        const descriptionValue = this.newBattleDescription.value
+        this.adapter.createBattle(nameValue, yearValue, countryValue, troopsValue, casualtiesValue, descriptionValue).then(battle => {
+            this.battles.push(new Battle(battle)) 
+        })
     }
 
     fetchAndLoadBattles() {
        this.adapter.
        getBattles()
        .then(battles => {
-        battles.forEach(battle => this.battles.push(new Battle(battle)))
+            battles.forEach(battle => this.battles.push(new Battle (battle)))
        }) 
        .then(() => {
         this.render()
