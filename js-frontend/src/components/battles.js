@@ -30,6 +30,12 @@ class Battles {
         const descriptionValue = this.newBattleDescription.value
         this.adapter.createBattle(nameValue, yearValue, countryValue, troopsValue, casualtiesValue, descriptionValue).then(battle => {
             this.battles.push(new Battle(battle))
+            this.newBattleName.value = ''
+            this.newBattleYear.value = ''
+            this.newBattleCountry.value = ''
+            this.newBattleTroops.value = ''
+            this.newBattleCasualties.value = ''
+            this.newBattleDescription.value = ''
             this.render() 
         })
     }
