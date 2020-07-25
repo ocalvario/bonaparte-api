@@ -14,18 +14,40 @@
         <h1>Bonaparte App</h1>
         <div id="new-battle-container">
             <form id="new-battle-form">
-                Battle Name: <input type="text" name="battle-name" id="new-battle-name"><br>
-                Year (ended): <input type="text" name="battle-year" id="new-battle-year"><br>
-                Location Country: <input type="text" name="battle-country" id="new-battle-country"><br>
-                Napoleon's Troop Size: <input type="text" name="battle-troops" id="new-battle-troops"><br>
-                Napoleon's Casualties: <input type="text" name="battle-casualties" id="new-battle-casualties"><br>
-                Description of Battle: <input type="text" name="battle-description" id="new-battle-description"><br>
+                <table>
+                <tr>
+                    <td>Battle Name:</td>
+                    <td><input type="text" name="battle-name" id="new-battle-name"> </td>
+                </tr>
+                <tr>
+                    <td>Year (ended):</td>
+                    <td><input type="text" name="battle-year" id="new-battle-year"></td>
+                </tr>
+                <tr>
+                    <td>Location Country:</td> 
+                    <td><input type="text" name="battle-country" id="new-battle-country"></td>
+                </tr>
+                <tr>
+                    <td>Napoleon's Troop Size:</td> 
+                    <td><input type="text" name="battle-troops" id="new-battle-troops"></td>
+                </tr>
+                <tr>
+                    <td>Napoleon's Casualties:</td> 
+                    <td><input type="text" name="battle-casualties" id="new-battle-casualties"></td>
+                </tr>
+                <tr>
+                    <td>Description of Battle:</td> 
+                    <td><input type="text" name="battle-description" id="new-battle-description"></td>
+                </tr>
+                </table>
+                <br>
                 <input type="submit" value="Save battle" />
             </form>
         </div>
         <div id="battles-content">
             <ul id='battles-container'>
-            
+              <h4 id='battle-name'> </h4> 
+              <li id='battle-year'></li> 
             </ul>
             <div id="battle-show">
 
