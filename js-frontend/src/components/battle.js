@@ -10,7 +10,7 @@ class Battle {
     }
 
     renderUl() {
-    return `<ul><h4>${this.name}</h4>
+    return `<ul contenteditable="true"><h4>${this.name}</h4>
                 <li>Year Ended: ${this.year}</li>
                 <li>Country of occurence: ${this.country} </li>
                 <li>Napoleon's Troop Strength: ${this.troops}</li>

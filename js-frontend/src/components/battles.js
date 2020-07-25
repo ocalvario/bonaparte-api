@@ -8,6 +8,7 @@ class Battles {
 
     initiBindingsAndEventListeners() {
         this.battlesContainer = document.getElementById('battles-container')
+        this.body = document.querySelector('body')
         this.newBattleName = document.getElementById('new-battle-name')
         this.newBattleYear = document.getElementById('new-battle-year')
         this.newBattleCountry = document.getElementById('new-battle-country')
@@ -16,11 +17,11 @@ class Battles {
         this.newBattleDescription = document.getElementById('new-battle-description')
         this.battleForm = document.getElementById('new-battle-form')
         this.battleForm.addEventListener('submit', this.createBattle.bind(this))
-        // this.battleForm
-    }
+        this.battlesContainer.addEventListener('dblclick', this.changeBattleClick.bind(this))
+        this.body.addEventListener('blur', this.updateBattle.bind(this), true)
+        }
 
     createBattle(e) {
-        console.log(this)
         e.preventDefault()
         const nameValue = this.newBattleName.value
         const yearValue = this.newBattleYear.value
@@ -38,6 +39,20 @@ class Battles {
             this.newBattleDescription.value = ''
             this.render() 
         })
+    }
+
+    changeBattleClick(e) {
+        const li = e.target
+        li.contentEditable = true
+        li.focus
+        li.classList.add('editable')
+    }
+
+    updateBattle(e) {
+        const li = e.target
+        li.contentEditable = false
+        li.classList.remove('editable')
+        console.log(li.innerHTML)
     }
 
     fetchAndLoadBattles() {
