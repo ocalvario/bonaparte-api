@@ -18,13 +18,13 @@ class Api::V1::BattlesController < ApplicationController
     def update
         battle = Battle.find(params[:id])
         battle.update(battle_params)
-        render json: @battle, status:200
+        render json: battle, status:200
     end
 
     def destroy
         battle = Battle.find(params[:id])
         battle.delete
-        render json: {battleID: @battle.id}
+        render json: {battleID: battle.id}
     end
 
     private
