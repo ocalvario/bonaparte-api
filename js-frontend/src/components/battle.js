@@ -10,13 +10,13 @@ class Battle {
     }
 
     renderUl() {
-    return `<ul contenteditable="true"><h4>${this.name}</h4>
-                <li>Year Ended: ${this.year}</li>
-                <li>Country of occurence: ${this.country} </li>
-                <li>Napoleon's Troop Strength: ${this.troops}</li>
-                <li>Napoleon's Total Casualties: ${this.casualties}</li>
-                <li>Battle Description: ${this.description} </li>
-            </ul><br>`  
-    }
+      return `<ul data-id=${this.id}><h4 id='battle-name'>${this.name}</h4>
+                  <li id='battle-year', data-id=${this.id},>Year Ended: ${this.year}</li>
+                  <li id='battle-country', data-id=${this.id}>Country of occurence: ${this.country} </li>
+                  <li id='battle-troops', data-id=${this.id}>Napoleon's Troop Strength: ${this.troops}</li>
+                  <li id='battle-casualties', data-id=${this.id}>Napoleon's Total Casualties: ${this.casualties}</li>
+                  <li id='battle-description', data-id=${this.id}>Battle Description: ${this.description} </li>
+              </ul><br>`  
+      }
 
 }
