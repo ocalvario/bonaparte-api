@@ -52,7 +52,21 @@ class Battles {
         const li = e.target
         li.contentEditable = false
         li.classList.remove('editable')
-        console.log(li.innerHTML)
+        const newValue = li.innerHTML
+        const id = li.dataset.id
+        let updatedName = e.name
+        if (li.id.match('battle-name')) {updatedName = newValue;}
+        let updatedYear = e.year
+        if (li.id.match('battle-year')) {updatedYear = newValue;}
+        let updatedCountry = e.country
+        if (li.id.match('battle-country')) {updatedCountry = newValue;}
+        let updatedTroops = e.troops
+        if (li.id.match('battle-troops')) {updatedTroops = newValue;}
+        let updatedCasualties = e.casualties
+        if (li.id.match('battle-casualties')) {updatedCasualties = newValue;}
+        let updatedDescription = e.description
+        if (li.id.match('battle-description')) {updatedDescription = newValue;}
+        this.adapter.updateBattle(updatedName, updatedYear, updatedCountry, updatedTroops, updatedCasualties, updatedDescription, id)
     }
 
     fetchAndLoadBattles() {
