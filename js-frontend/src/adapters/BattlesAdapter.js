@@ -26,25 +26,22 @@ class BattlesAdapter {
     }).then(res => res.json())
   }
 
-  updateBattle(nameValue, yearValue, countryValue, troopsValue, casualtiesValue, descriptionValue, id) {
+  updateBattle(updatedName, updatedYear, updatedCountry, updatedTroops, updatedCasualties, updatedDescription, id) {
     const battle = {
-      name: nameValue,
-      year: yearValue,
-      country: countryValue,
-      troops: troopsValue,
-      casualties: casualtiesValue,
-      description: descriptionValue
+      name: updatedName,
+      year: updatedYear,
+      country: updatedCountry,
+      troops: updatedTroops,
+      casualties: updatedCasualties,
+      description: updatedDescription
     }
-    return fetch(`${this.baseUrl}/id`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ battle }),
-    }).then(res => res.json())
-  }
-    
-  }
-
+    return fetch(`${this.baseUrl}/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ battle }),
+      }).then(res => res.json())
+    }
 }
  
